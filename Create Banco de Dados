@@ -1,0 +1,41 @@
+Banco de dados criado usando Postgres
+
+Scripts para a criação das tabelas
+
+CREATE TABLE simulacao (
+    id SERIAL PRIMARY KEY,
+    nome_pessoa VARCHAR(20),
+    cpf VARCHAR(11),
+    valor_segurado NUMERIC(10,4),
+    numero_contrato_emprestimo VARCHAR(20),
+    fim_contrato_emprestimo DATE,
+    data_nascimento DATE,
+    produto_escolhido INT,
+    data_simulacao TIMESTAMP,
+    valor_total_premio NUMERIC(10, 4),
+    FOREIGN KEY (produto_escolhido) REFERENCES produto(id)
+);
+
+CREATE TABLE simulacao (
+    id SERIAL PRIMARY KEY,
+    nome_pessoa VARCHAR(20),
+    cpf VARCHAR(11),
+    valor_segurado NUMERIC(10, 4),
+    numero_contrato_emprestimo VARCHAR(20),
+    fim_contrato_emprestimo DATE,
+    data_nascimento DATE,
+    produto_escolhido INT,
+    data_simulacao TIMESTAMP,
+    valor_total_premio NUMERIC(10, 4),
+    FOREIGN KEY (produto_escolhido) REFERENCES produto(id)
+);
+
+
+Script para Insert dos dados produto 1 e produto 2 conforme exemplo 
+
+NSERT INTO produto (id, nome, idade_minima, idade_maxima, taxa_juros, valor_minimo_premio)
+VALUES 
+    (4, 'Produto 01', 18, 70, 0.45, 5),
+    (5, 'Produto 02', 71, 75, 1.85, 5);
+
+
